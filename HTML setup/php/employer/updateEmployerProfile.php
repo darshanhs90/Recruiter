@@ -1,6 +1,6 @@
 <?php 
     session_start();
-    require("config.php");
+    require("../../config.php");
     var_dump($_POST);
     if(!empty($_POST)) 
     { 
@@ -34,8 +34,8 @@
             echo "Updated";
         } 
         catch(PDOException $ex){ die("Failed to run query: " . $ex->getMessage()); } 
-        header("Location: studentProfile.php"); 
-        die("Redirecting to studentProfile.php"); 
+        header("Location: ../../studentProfile.php"); 
+        die("Redirecting to ../../studentProfile.php"); 
     }
      
 ?>

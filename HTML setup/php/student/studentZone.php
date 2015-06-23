@@ -16,16 +16,20 @@ echo $_SESSION['user'];
 -->
 <html>
 	<head>
-		<title>Techruit App</title>
+		<title>Techruit AppP</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/bootstrap.min.theme.css">
+		<link rel="stylesheet" href="../../assets/css/main.css" />
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		
+ <script src="js/bootstrap.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
-		<script src="js/studentPostLoginHome.js"></script>
+		<script src="js/studentJobPostings.js"></script>		
 	</head>
-	<body>
+	<body class="subpage">
 		<div id="page-wrapper">
 
 			<!-- Header -->
@@ -34,8 +38,8 @@ echo $_SESSION['user'];
 						<div class="row">
 							<div class="12u">
 
-								<<!-- Logo -->
-									<h1><a href="studentPostLoginHome.php" id="logo">Techruit-Student</a></h1>
+								<!-- Logo -->
+									<h1><a href="#" id="logo">Techruit-Student</a></h1>
 
 								<!-- Nav -->
 									<nav id="nav">
@@ -44,157 +48,43 @@ echo $_SESSION['user'];
 										<a href="studentCompanyInsights.php">Company Insights</a>
 										<a href="studentZone.php">Interview Zone</a>
 										<a href="studentProfile.php">My Profile</a>
-										<a href="logout.php">Logout</a>
+										<a href="../../logout.php">Logout</a>
 									</nav>
 
 							</div>
 						</div>
 					</header>
-					<div id="banner">
-						<div class="container">
-							<div class="row">
-								<div class="6u 12u(mobile)">
-
-									<!-- Banner Copy -->
-										<p>Welcome, your QR code for the resume is avalable under MyProfile</p>
-										<a href="studentProfile.php" class="button-big">Take me there!</a>
-
-								</div>
-								<div class="6u 12u(mobile)">
-
-									<!-- Banner Image -->
-										<a href="#" class="bordered-feature-image"><img src="images/banner.jpg" alt="" /></a>
-
-								</div>
-							</div>
-						</div>
-					</div>
 				</div>
 
-			<!-- Features -->
-				<div id="features-wrapper">
-					<div id="features">
-						<div class="container">
-							<div class="row">
-								<div class="3u 12u(mobile)">
-
-									
-										<section>
-											
-											<h2>Welcome to Techruit</h2>
-											<p>
-												One stop for your career fair resume needs and company insights.
-											</p>
-										</section>
-
-								</div>
-								<div class="3u 12u(mobile)">
-
-									
-										<section>
-											
-											<h2>Free for all</h2>
-											<p>
-												Yes! It's absolutely free for all.
-											</p>
-										</section>
-
-								</div>
-								<div class="3u 12u(mobile)">
-
-									
-										<section>
-											
-											<h2>License Info</h2>
-											<p>
-												This app has been built by Darshan and Prajwal.
-												Extensive use of Kandy has been made for all your interview 
-											</p>
-										</section>
-
-								</div>
-								<div class="3u 12u(mobile)">
-
-									
-										<section>
-											
-											<h2>Contact Us!</h2>
-											<p>
-												<a href="mailto:hsdars@gmail.com">Darshan</a>
-												<a href="mailto:prajwal19@gmail.com">Prajwal</a>
-											</p>
-										</section>
-
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-<!-- 
+			<!-- Content -->
 				<div id="content-wrapper">
 					<div id="content">
 						<div class="container">
 							<div class="row">
-								<div class="4u 12u(mobile)">
+								<div class="6u 12u(mobile)">
 
-									
+									<!-- Sidebar -->
 										<section>
 											<header>
-												<h2>Who We Are</h2>
-												<h3>A subheading about who we are</h3>
+												<h2>Video Interview</h2>
 											</header>
-											<a href="#" class="feature-image"><img src="images/pic05.jpg" alt="" /></a>
-											<p>
-												Duis neque nisi, dapibus sed mattis quis, rutrum accumsan sed.
-												Suspendisse eu varius nibh. Suspendisse vitae magna eget odio amet mollis
-												justo facilisis quis. Sed sagittis mauris amet tellus gravida lorem ipsum.
-											</p>
+																						
+<a href="answer_video_call.html"> <button type="button" class="btn btn-success" ng-show="myForm.$valid" id="btnsbmt" ng-click="makevid()">Receive Video Call</button></a>
 										</section>
+										
 
 								</div>
-								<div class="4u 12u(mobile)">
+								<div class="6u 12u(mobile) important(mobile)">
 
-									
+									<!-- Main Content -->
 										<section>
 											<header>
-												<h2>What We Do</h2>
-												<h3>A subheading about what we do</h3>
+												<h2>Text Editor</h2>
 											</header>
-											<ul class="check-list">
-												<li>Sed mattis quis rutrum accum</li>
-												<li>Eu varius nibh suspendisse lorem</li>
-												<li>Magna eget odio amet mollis justo</li>
-												<li>Facilisis quis sagittis mauris</li>
-												<li>Amet tellus gravida lorem ipsum</li>
-											</ul>
-										</section>
+<a href="cobrowsing_agent.html"> 
+   		 <button type="button" class="btn btn-success" ng-show="myForm.$valid" id="btnsbmt" ng-click="makeshare()">Start Screen Share session</button></a>
 
-								</div>
-								<div class="4u 12u(mobile)">
 
-									
-										<section>
-											<header>
-												<h2>What People Are Saying</h2>
-												<h3>And a final subheading about our clients</h3>
-											</header>
-											<ul class="quote-list">
-												<li>
-													<img src="images/pic06.jpg" alt="" />
-													<p>"Neque nisidapibus mattis"</p>
-													<span>Jane Doe, CEO of UntitledCorp</span>
-												</li>
-												<li>
-													<img src="images/pic07.jpg" alt="" />
-													<p>"Lorem ipsum consequat!"</p>
-													<span>John Doe, President of FakeBiz</span>
-												</li>
-												<li>
-													<img src="images/pic08.jpg" alt="" />
-													<p>"Magna veroeros amet tempus"</p>
-													<span>Mary Smith, CFO of UntitledBiz</span>
-												</li>
-											</ul>
 										</section>
 
 								</div>
@@ -203,13 +93,13 @@ echo $_SESSION['user'];
 					</div>
 				</div>
 
-			
+			<!-- Footer -->
 				<div id="footer-wrapper">
 					<footer id="footer" class="container">
 						<div class="row">
 							<div class="8u 12u(mobile)">
 
-								
+								<!-- Links -->
 									<section>
 										<h2>Links to Important Stuff</h2>
 										<div>
@@ -253,7 +143,7 @@ echo $_SESSION['user'];
 							</div>
 							<div class="4u 12u(mobile)">
 
-								
+								<!-- Blurb -->
 									<section>
 										<h2>An Informative Text Blurb</h2>
 										<p>
@@ -268,10 +158,10 @@ echo $_SESSION['user'];
 						</div>
 					</footer>
 				</div>
- -->
+
 			<!-- Copyright -->
 				<div id="copyright">
-						&copy; All rights reserved. | Techruit App
+					&copy; All rights reserved. | Techruit App
 				</div>
 
 		</div>

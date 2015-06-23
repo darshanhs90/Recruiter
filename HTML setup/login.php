@@ -47,12 +47,12 @@
             if($studrec==1){
 
 
-            header("Location: studentPostLoginHome.php"); 
-            die("Redirecting to: studentPostLoginHome.php"); 
+            header("Location: ./php/student/studentPostLoginHome.php"); 
+            die("Redirecting to: ./php/student/studentPostLoginHome.php"); 
         }
         else if($studrec==0){
-            header("Location: employerPostLoginHome.php"); 
-            die("Redirecting to: employerPostLoginHome.php");
+            header("Location: ./php/employer/employerPostLoginHome.php"); 
+            die("Redirecting to: ./php/employer/employerPostLoginHome.php");
         }
         } 
         else{ 
@@ -69,7 +69,7 @@
 <title></title>
 <link href='http://fonts.googleapis.com/css?family=Ropa+Sans' rel='stylesheet'>
 <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel='stylesheet'>
-<script type="text/javascript" src="jquery.min.js"></script>
+<script type="text/javascript" src="./js/jquery.min.js"></script>
 <script type="text/javascript">
     $(document).ready(function(){
             $("input[type='radio']").on('change', function() {
@@ -171,7 +171,7 @@ li,ul,body,input{margin:0; padding:0; list-style:none}
 
 <section class="signup-section">
 <div class="login">
-<form action="registerme.php" method="post">
+<form action="./php/registerme.php" method="post">
 <ul class="ul-list">
 <li><input type="text" required class="input" placeholder="First Name" name="fname" value=""/><span class="icon"></i></span></li>
 <li><input type="text" required class="input" placeholder="Last Name" name="lname" value=""/><span class="icon"></i></span></li>

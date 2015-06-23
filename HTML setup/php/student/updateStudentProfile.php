@@ -1,6 +1,6 @@
 <?php 
     session_start();
-    require("config.php");
+    require("../../config.php");
     var_dump($_POST);
     if(!empty($_POST)) 
     { 

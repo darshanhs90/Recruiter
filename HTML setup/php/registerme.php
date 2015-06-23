@@ -1,5 +1,5 @@
 <?php 
-    require("config.php");
+    require("../config.php");
     if(!empty($_POST)) 
     { 
         // Ensure that the user fills out fields 
@@ -127,7 +127,7 @@
         } 
         catch(PDOException $ex){ die("Failed to run query: " . $ex->getMessage());}
     }
-        header("Location: login.php"); 
-        die("Redirecting to login.php"); 
+        header("Location: ../login.php"); 
+        die("Redirecting to ../login.php"); 
     } 
 ?>

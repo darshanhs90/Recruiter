@@ -10,7 +10,7 @@
     app.controller('myCtrl', function($scope, $http) {
 
 
-            $http.post('./php/callingPage.php')
+            $http.post('../callingPage.php')
                 .success(function(data, status, headers, config) {
                     alert(data);
                     //$scope.profiles = data;

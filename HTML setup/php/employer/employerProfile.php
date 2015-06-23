@@ -1,28 +1,25 @@
 <?php 
 	//error_reporting(0);
-session_start();
-	require("config.php");
+	session_start();
+	require("../../config.php");
 	$conn = new mysqli($host, $username, $password, $dbname);
 	if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 	if(empty($_SESSION['user'])) 
     {
-        header("Location: index.php");
-        die("Redirecting to index.php"); 
+        header("Location: login.php");
+        die("Redirecting to login.php"); 
     }
    $semail = $_SESSION['user'];
-   $query = "select fname,lname,email,password,univname,voicelink,resumelink from users where email = '$semail'"; 
+   $query = "select fname,lname,email,companyname from users where email = '$semail'"; 
    $result = $conn->query($query);
          
         while ($line = $result->fetch_assoc()) { 
    		$fname=$line['fname'];
    		$lname=$line['lname'];
 		$email=$line['email'];
-		$password=$line['password'];
-		$univname=$line['univname'];
-		$voicelink=$line['voicelink'];
-		$resumelink=$line['resumelink'];
+		$univname=$line['companyname'];
 		}
 		 
  ?>
@@ -39,14 +36,14 @@ session_start();
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-		  <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/bootstrap.min.theme.css">
-		<link rel="stylesheet" href="assets/css/main.css" />
+			  <link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/bootstrap.min.theme.css">
+		<link rel="stylesheet" href="../../assets/css/main.css" />
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
-		 <script src="js/bootstrap.min.js"></script>
+		
+		 <script src="../../js/bootstrap.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
-
-		<script src="js/studentProfile.js"></script>		
+		<script src="../../js/employerProfile.js"></script>		
 	</head>
 	<body class="subpage">
 		<div id="page-wrapper">
@@ -55,20 +52,19 @@ session_start();
 				<div id="header-wrapper">
 					<header id="header" class="container">
 						<div class="row">
-						
 							<div class="12u">
 
 								<!-- Logo -->
-									<h1><a href="#" id="logo">Techruit-Student</a></h1>
+									<h1><a href="#" id="logo">Techruit-Employer</a></h1>
 
 								<!-- Nav -->
 									<nav id="nav">
-										<a href="studentPostLoginHome.php">Homepage</a>
-										<a href="studentInterviews.php">Interview Dashboard</a>
-										<a href="studentCompanyInsights.php">Company Insights</a>
-										<a href="studentZone.php">Interview Zone</a>
-										<a href="studentProfile.php">My Profile</a>
-										<a href="logout.php">Logout</a>
+										<a href="employerPostLoginHome.php">Homepage</a>
+										<a href="employerInterviews.php">Interview Dashboard</a>
+										<a href="employerAnalyseProfiles.php">Analyse Profiles</a>
+										<a href="employerShortlists.php">Shortlisted Students</a>
+										<a href="employerProfile.php">My Profile</a>
+										<a href="../../logout.php">Logout</a>
 									</nav>
 
 							</div>
@@ -84,14 +80,14 @@ session_start();
 								<div class="12u">
 
 									<!-- Main Content -->
-										<section >
+										<section>
 											<header>
 												<h2>My Profile</h2>
 											</header>
 											
 											<div class="row">
     <div class="jumbotron col-sm-12" >
-    <form action="updateStudentProfile.php" method="post" role="form" class="col-sm-6" name="myForm" novalidate>
+    <form action="updateEmployerProfile.php" method="post" role="form" class="col-sm-6" name="myForm" novalidate >
        <div class="row">
        <div class="form-group col-sm-6">
       <label for="name">First Name:</label>
@@ -99,48 +95,20 @@ session_start();
     </div>
        <div class="form-group col-sm-6">
       <label for="name">Last Name:</label>
-      <input type="text" class="form-control" id="lname" placeholder="Enter Lastname" required="true" value="<?php echo $lname; ?>">
+      <input type="text" class="form-control" id="lname" placeholder="Enter Lastname" required="true" value='<?php echo $lname; ?>'>
     </div>
        </div>
     <div class="form-group">
       <label for="email">Email:</label>
-      <input type="email" class="form-control" id="email" placeholder="Enter email" required="true" disabled="true" value="<?php echo $email; ?>">
+      <input type="email" class="form-control" id="email" placeholder="Enter email" required="true" disabled="true" value='<?php echo $email; ?>'>
     </div>
     <div class="form-group">
       <label for="pwd">Password:</label>
-      <input type="password" class="form-control" id="pwd" placeholder="Change password" required="true"  title="Minimum Password Length is 8 Characters" value="">
+      <input type="password" class="form-control" id="pwd" placeholder="Change password" required="true"  title="Minimum Password Length is 8 Characters">
     </div>
-   <div class="form-group">
-      <label for="lcn">University Name:</label>
-      <input type="text" class="form-control" id="lcn" placeholder="Enter University Name" required="true" value="<?php echo $univname; ?>">
-    </div>
-    <div class="form-group">
-      <label for="ppic" title="Use sites like postimage.org" >Resume Link</label>
-      <input type="url" class="form-control" id="ppic" placeholder="Enter Url Link(Use AWS cloud for file storage)" required="true" title="Use sites like postimage.org" value="<?php echo $resumelink; ?>">
-    </div>
-    <div class="form-group">
-      <label for="ppic" title="Use sites like postimage.org" >Voice Link</label>
-      <input type="url" class="form-control" id="ppic" placeholder="Enter Url Link(Use AWS cloud for file storage)" required="true" title="Use sites like postimage.org" value="<?php echo $voicelink; ?>">
-    </div>    
-    <button type="submit" class="btn btn-default" ng-show="myForm.$invalid" ng-disabled="myForm.$invalid" id="sbmt">Update Changes</button>
+    <button type="submit" class="btn btn-success" ng-show="myForm.$invalid" ng-disabled="myForm.$invalid" id="sbmt">Update Changes</button>
     <!-- <button type="button" class="btn btn-success" ng-show="myForm.$valid" id="btnsbmt" >Update Changes</button> -->
     </form>
-    <div class="col-sm-6" style="margin:auto;" align="center" >
-   <!-- <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=darshanhs"  alt="Mountain View" style="width:200px;height:200px; ">
-    <div>
-    <span>QR Code</span>
-    </div>-->
-    </div>
-  </div>
-
-
-
-
-
-
-
-
-
 										</section>
 
 								</div>

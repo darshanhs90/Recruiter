@@ -1,15 +1,3 @@
-<?php
-session_start();
-if(!isset($_SESSION['user'])) {
-header("location: login.php");
-exit();
-}
-/*else{
-echo $_SESSION['user_mail'];
-}*/
-?>
-
-
 <!DOCTYPE HTML>
 <!--
 	Halcyonic by HTML5 UP
@@ -22,39 +10,13 @@ echo $_SESSION['user_mail'];
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-	<link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/bootstrap.min.theme.css">
-	<link rel="stylesheet" href="assets/css/main.css" />
-		<style>
-.accordion {
-    margin:1em 0
-}
-.accordion h3 {
-    background:#559b6a;
-    color:#fff;
-    cursor:pointer;
-    margin:0 0 1px 0;
-    padding:4px 10px
-}
-.accordion h3.current {
-    background:#4289aa;
-    cursor:default
-}
-.accordion div.pane {
-    padding:5px 10px
-}
-		</style>
+		<link rel="stylesheet" href="../../assets/css/main.css" />
+		<link rel="stylesheet" href="../../css/studentCompanyInsights.css" />
+		
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
-		 <script src="js/jquery.js"></script>
-
-
-
-
-
-
- <script src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../../public/lib/jquery/dist/jquery.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
-		<script src="js/employerShortlists.js"></script>		
+		<script src="../../js/studentCompanyInsights.js"></script>
 	</head>
 	<body class="subpage">
 		<div id="page-wrapper">
@@ -66,16 +28,16 @@ echo $_SESSION['user_mail'];
 							<div class="12u">
 
 								<!-- Logo -->
-									<h1><a href="#" id="logo">Techruit-Employer</a></h1>
+									<h1><a href="#" id="logo">Techruit-Student</a></h1>
 
 								<!-- Nav -->
 									<nav id="nav">
-										<a href="employerPostLoginHome.php">Homepage</a>
-										<a href="employerInterviews.php">Interview Dashboard</a>
-										<a href="employerAnalyseProfiles.php">Analyse Profiles</a>
-										<a href="employerShortlists.php">Shortlisted Students</a>
-										<a href="employerProfile.php">My Profile</a>
-										<a href="logout.php">Logout</a>
+										<a href="studentPostLoginHome.php">Homepage</a>
+										<a href="studentInterviews.php">Interview Dashboard</a>
+										<a href="studentCompanyInsights.php">Company Insights</a>
+										<a href="studentZone.php">Interview Zone</a>
+										<a href="studentProfile.php">My Profile</a>
+										<a href="../../logout.php">Logout</a>
 									</nav>
 
 							</div>
@@ -88,42 +50,49 @@ echo $_SESSION['user_mail'];
 					<div id="content">
 						<div class="container">
 							<div class="row">
-								<div class="12u 12u(mobile)">
+								<div class="9u 12u(mobile)">
+
+									<!-- Main Content -->
+										<section>
+											<header>
+												<h2>Company Insights</h2>
+												<h3>A way to get to know the company</h3>
+											</header>
+											herer
+										</section>
+
+								</div>
+								<div class="3u 12u(mobile)">
 
 									<!-- Sidebar -->
 										<section>
 											<header>
-												<h2>Shortlisted Students</h2>
-							<div class="accordion">
-    
-    <ASIDE ng-repeat="prof in profiles track by $index"> <h3>{{x.name}} from {{x.university}}</h3>
-
-    <div class="pane">
-        <ASIDE class="jumbotron">
-        	<ASIDE class="form-group col-sm-12">
-      <a href="video_call.html"> <button type="button" class="btn btn-success" ng-show="myForm.$valid" id="btnsbmt" ng-click="makevid()">Make Video Call</button></a><a href="cobrowsing_user.html"> 
-   		 <button type="button" class="btn btn-success" ng-show="myForm.$valid" id="btnsbmt" ng-click="makeshare()">Start Screen Share session</button></a>
-   		 <button type="button" class="btn btn-success" ng-show="myForm.$valid" id="btnsbmt" ng-click="sendaccept($index)">Send Acceptance</button>
-    </ASIDE>
-
-
-
-        </ASIDE>
-    </div>
-    </ASIDE>
-</div>					
-
-
-
-
-
-
+												<h2>Company List</h2>
 											</header>
+											<ul class="link-list" style="overflow-y: scroll; height:250px;">
+												<li><a href="#">Google</a></li>
+												<li><a href="#">Facebook</a></li>
+												<li><a href="#">Microsoft</a></li>
+												<li><a href="#">IBM</a></li>
+												<li><a href="#">Quora</a></li>
+												<li><a href="#">Motorola</a></li>
+												<li><a href="#">Uber</a></li>
+												<li><a href="#">Kandy</a></li>
+											</ul>
 										</section>
-										
+										<section>
+											<header>
+												<h2>Check Company Score</h2>
+											</header>
+											<div id="navBar">
+     <input id="searchBox" type="text" placeholder="Search Our Site" ng-model="searchBox">
+     <div align="center">
+    	 <input id="searchButton" type="button" src="icon_searchMag.png" value="Search" ng-click="srch()">
+     </div>
+</div>
+										</section>
 
 								</div>
-								
 							</div>
 						</div>
 					</div>

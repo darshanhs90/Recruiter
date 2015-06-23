@@ -1,15 +1,13 @@
 <?php
 session_start();
 if(!isset($_SESSION['user'])) {
-header("location: login.php");
+header("location: ../../login.php");
 exit();
 }
 /*else{
 echo $_SESSION['user'];
 }*/
 ?>
-
-
 <!DOCTYPE HTML>
 <!--
 	Halcyonic by HTML5 UP
@@ -22,10 +20,10 @@ echo $_SESSION['user'];
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="../../assets/css/main.css" />
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
-		<script src="js/employerPostLoginHome.js"></script>		
+		<script src="../../js/studentPostLoginHome.js"></script>
 	</head>
 	<body>
 		<div id="page-wrapper">
@@ -36,17 +34,17 @@ echo $_SESSION['user'];
 						<div class="row">
 							<div class="12u">
 
-								<!-- Logo -->
-									<h1><a href="#" id="logo">Techruit-Employer</a></h1>
+								<<!-- Logo -->
+									<h1><a href="studentPostLoginHome.php" id="logo">Techruit-Student</a></h1>
 
 								<!-- Nav -->
 									<nav id="nav">
-										<a href="employerPostLoginHome.php">Homepage</a>
-										<a href="employerInterviews.php">Interview Dashboard</a>
-										<a href="employerAnalyseProfiles.php">Analyse Profiles</a>
-										<a href="employerShortlists.php">Shortlisted Students</a>
-										<a href="employerProfile.php">My Profile</a>
-										<a href="logout.php">Logout</a>
+										<a href="studentPostLoginHome.php">Homepage</a>
+										<a href="studentInterviews.php">Interview Dashboard</a>
+										<a href="studentCompanyInsights.php">Company Insights</a>
+										<a href="studentZone.php">Interview Zone</a>
+										<a href="studentProfile.php">My Profile</a>
+										<a href="../../logout.php">Logout</a>
 									</nav>
 
 							</div>
@@ -58,14 +56,14 @@ echo $_SESSION['user'];
 								<div class="6u 12u(mobile)">
 
 									<!-- Banner Copy -->
-										<p>Welcome, please check your profile for the QR code</p>
-										<a href="#" class="button-big">Go on, click me!</a>
+										<p>Welcome, your QR code for the resume is avalable under MyProfile</p>
+										<a href="studentProfile.php" class="button-big">Take me there!</a>
 
 								</div>
 								<div class="6u 12u(mobile)">
 
 									<!-- Banner Image -->
-										<a href="#" class="bordered-feature-image"><img src="images/banner.jpg" alt="" /></a>
+										<a href="#" class="bordered-feature-image"><img src="../../images/banner.jpg" alt="" /></a>
 
 								</div>
 							</div>
@@ -80,56 +78,50 @@ echo $_SESSION['user'];
 							<div class="row">
 								<div class="3u 12u(mobile)">
 
-									<!-- Feature #1 -->
+									
 										<section>
-											<a href="#" class="bordered-feature-image"><img src="images/pic01.jpg" alt="" /></a>
-											<h2>Welcome to Halcyonic</h2>
+											
+											<h2>Welcome to Techruit</h2>
 											<p>
-												This is <strong>Halcyonic</strong>, a free site template
-												by <a href="http://n33.co/">AJ</a> for
-												<a href="http://html5up.net">HTML5 UP</a>. It's responsive,
-												built on HTML5 + CSS3, and includes 5 unique page layouts.
+												One stop for your career fair resume needs and company insights.
 											</p>
 										</section>
 
 								</div>
 								<div class="3u 12u(mobile)">
 
-									<!-- Feature #2 -->
+									
 										<section>
-											<a href="#" class="bordered-feature-image"><img src="images/pic02.jpg" alt="" /></a>
-											<h2>Responsive You Say?</h2>
+											
+											<h2>Free for all</h2>
 											<p>
-												Yes! Halcyonic is built on the <a href="http://getskel.com">Skel</a>
-												framework, so it has full responsive support for desktop, tablet,
-												and mobile device displays.
+												Yes! It's absolutely free for all.
 											</p>
 										</section>
 
 								</div>
 								<div class="3u 12u(mobile)">
 
-									<!-- Feature #3 -->
+									
 										<section>
-											<a href="#" class="bordered-feature-image"><img src="images/pic03.jpg" alt="" /></a>
+											
 											<h2>License Info</h2>
 											<p>
-												Halcyonic is licensed under the <a href="http://html5up.net/license">CCA 3.0</a> license,
-												so use it for personal or commercial use as much as you like (just keep
-												the footer credit intact).
+												This app has been built by Darshan and Prajwal.
+												Extensive use of Kandy has been made for all your interview 
 											</p>
 										</section>
 
 								</div>
 								<div class="3u 12u(mobile)">
 
-									<!-- Feature #4 -->
+									
 										<section>
-											<a href="#" class="bordered-feature-image"><img src="images/pic04.jpg" alt="" /></a>
-											<h2>Volutpat etiam aliquam</h2>
+											
+											<h2>Contact Us!</h2>
 											<p>
-												Duis neque nisi, dapibus sed mattis quis, rutrum accumsan sed. Suspendisse
-												eu varius nibh. Suspendisse vitae magna eget odio amet mollis.
+												<a href="mailto:hsdars@gmail.com">Darshan</a>
+												<a href="mailto:prajwal19@gmail.com">Prajwal</a>
 											</p>
 										</section>
 
@@ -138,15 +130,14 @@ echo $_SESSION['user'];
 						</div>
 					</div>
 				</div>
-
-			<!-- Content -->
+<!-- 
 				<div id="content-wrapper">
 					<div id="content">
 						<div class="container">
 							<div class="row">
 								<div class="4u 12u(mobile)">
 
-									<!-- Box #1 -->
+									
 										<section>
 											<header>
 												<h2>Who We Are</h2>
@@ -163,7 +154,7 @@ echo $_SESSION['user'];
 								</div>
 								<div class="4u 12u(mobile)">
 
-									<!-- Box #2 -->
+									
 										<section>
 											<header>
 												<h2>What We Do</h2>
@@ -181,7 +172,7 @@ echo $_SESSION['user'];
 								</div>
 								<div class="4u 12u(mobile)">
 
-									<!-- Box #3 -->
+									
 										<section>
 											<header>
 												<h2>What People Are Saying</h2>
@@ -212,13 +203,13 @@ echo $_SESSION['user'];
 					</div>
 				</div>
 
-			<!-- Footer -->
+			
 				<div id="footer-wrapper">
 					<footer id="footer" class="container">
 						<div class="row">
 							<div class="8u 12u(mobile)">
 
-								<!-- Links -->
+								
 									<section>
 										<h2>Links to Important Stuff</h2>
 										<div>
@@ -262,7 +253,7 @@ echo $_SESSION['user'];
 							</div>
 							<div class="4u 12u(mobile)">
 
-								<!-- Blurb -->
+								
 									<section>
 										<h2>An Informative Text Blurb</h2>
 										<p>
@@ -277,7 +268,7 @@ echo $_SESSION['user'];
 						</div>
 					</footer>
 				</div>
-
+ -->
 			<!-- Copyright -->
 				<div id="copyright">
 						&copy; All rights reserved. | Techruit App

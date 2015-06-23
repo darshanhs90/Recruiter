@@ -1,11 +1,11 @@
 <?php
 session_start();
 if(!isset($_SESSION['user'])) {
-  header("location: login.php");
-  exit();
+header("location: ../../login.php");
+exit();
 }
 /*else{
-  echo $_SESSION['user_mail'];
+echo $_SESSION['user'];
 }*/
 ?>
 <!DOCTYPE HTML>
@@ -107,16 +107,18 @@ if(!isset($_SESSION['user'])) {
 
 .editing .todo-remove-icon { visibility: hidden; }
 </style>
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<link rel="stylesheet" href="public/lib/fullcalendar/fullcalendar.css">
-    <script src='public/lib/jquery/dist/jquery.min.js'></script>
-    <script src='public/lib/jquery-ui/ui/jquery-ui.js'></script>	
-    <script src='public/lib/angular/angular.min.js'></script>
-    <script src='public/lib/fullcalendar/fullcalendar.js'></script>
-    <script src='public/lib/angular-ui-calendar/src/calendar.js'></script>
-		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="../../assets/css/main.css" />
+		<link rel="stylesheet" href="../../public/lib/fullcalendar/fullcalendar.css">
+    <script src='../../public/lib/jquery/dist/jquery.min.js'></script>
+    <script src='../../public/lib/jquery-ui/ui/jquery-ui.js'></script>	
+    <script src='../../public/lib/angular/angular.min.js'></script>
+    <script src='../../public/lib/fullcalendar/fullcalendar.js'></script>
+    <script src='../../public/lib/angular-ui-calendar/src/calendar.js'></script>
+
+		
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
-		<script src="js/employerInterviews.js"></script>		
+		<script src="../../js/studentInterviews.js"></script>
+
 	</head>
 	<body class="subpage" ng-controller='MainController'>
 		<div id="page-wrapper">
@@ -128,16 +130,16 @@ if(!isset($_SESSION['user'])) {
 							<div class="12u">
 
 								<!-- Logo -->
-									<h1><a href="#" id="logo">Techruit-Employer</a></h1>
+									<h1><a href="#" id="logo">Techruit-Student</a></h1>
 
 								<!-- Nav -->
 									<nav id="nav">
-                                        <a href="employerPostLoginHome.php">Homepage</a>
-                                        <a href="employerInterviews.php">Interview Dashboard</a>
-                                        <a href="employerAnalyseProfiles.php">Analyse Profiles</a>
-                                        <a href="employerShortlists.php">Shortlisted Students</a>
-                                        <a href="employerProfile.php">My Profile</a>
-                                        <a href="logout.php">Logout</a>
+                                        <a href="studentPostLoginHome.php">Homepage</a>
+                                        <a href="studentInterviews.php">Interview Dashboard</a>
+                                        <a href="studentCompanyInsights.php">Company Insights</a>
+                                        <a href="studentZone.php">Interview Zone</a>
+                                        <a href="studentProfile.php">My Profile</a>
+                                        <a href="../../logout.php">Logout</a>
                                     </nav>
 
 							</div>
@@ -687,7 +689,7 @@ new TodoAppView();
 											</header>
                                             <div ng-repeat="field in dashboardData track by $index"><!-- ng-repeat="" -->
                                             <p>
-                                                <h4>Employer with email id {{field.remail}} of company {{field.cname}} has {{field.analysed}} you on {{field.ts}}</h4>
+                                                <h4>Employer {{field.empname}} with email id {{field.empid}} of company {{field.empcompany}} has {{field.select}} you on {{field.date}}</h4>
                                             </p>
                                             <hr/>
                                             </div>
@@ -785,12 +787,12 @@ new TodoAppView();
 		</div>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/skel-viewport.min.js"></script>
-			<script src="assets/js/util.js"></script>
+			<script src="../../assets/js/jquery.min.js"></script>
+			<script src="../../assets/js/skel.min.js"></script>
+			<script src="../../assets/js/skel-viewport.min.js"></script>
+			<script src="../../assets/js/util.js"></script>
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-			<script src="assets/js/main.js"></script>
+			<script src="../../assets/js/main.js"></script>
 
 	</body>
 </html>

@@ -1,7 +1,7 @@
 <?php
 session_start();
 if(!isset($_SESSION['user'])) {
-header("location: login.php");
+header("location: ../../login.php");
 exit();
 }
 /*else{
@@ -21,9 +21,9 @@ echo $_SESSION['user_mail'];
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-	<link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/bootstrap.min.theme.css">
-	<link rel="stylesheet" href="assets/css/main.css" />
+	<link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/bootstrap.min.theme.css">
+	<link rel="stylesheet" href="../../assets/css/main.css" />
 		<style>
 .accordion {
     margin:1em 0
@@ -49,7 +49,7 @@ echo $_SESSION['user_mail'];
 
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
 
-		<script src="js/employerAnalyseProfiles.js"></script>	
+		<script src="../../js/employerAnalyseProfiles.js"></script>	
 
 	</head>
 	<body class="subpage" ng-controller="myCtrl">
@@ -71,7 +71,7 @@ echo $_SESSION['user_mail'];
 										<a href="employerAnalyseProfiles.php">Analyse Profiles</a>
 										<a href="employerShortlists.php">Shortlisted Students</a>
 										<a href="employerProfile.php">My Profile</a>
-										<a href="logout.php">Logout</a>
+										<a href="../../logout.php">Logout</a>
 									</nav>
 
 							</div>
