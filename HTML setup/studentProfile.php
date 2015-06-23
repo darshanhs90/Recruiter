@@ -1,5 +1,6 @@
 <?php 
 	//error_reporting(0);
+session_start();
 	require("config.php");
 	$conn = new mysqli($host, $username, $password, $dbname);
 	if ($conn->connect_error) {
@@ -10,8 +11,8 @@
         header("Location: index.php");
         die("Redirecting to index.php"); 
     }
-   $semail = $_SESSION['user']['email'];
-   $query = "select fname,lname,email,password,univname,resumelink from users1 where email = '$semail'"; 
+   $semail = $_SESSION['user'];
+   $query = "select fname,lname,email,password,univname,voicelink,resumelink from users where email = '$semail'"; 
    $result = $conn->query($query);
          
         while ($line = $result->fetch_assoc()) { 
@@ -20,6 +21,7 @@
 		$email=$line['email'];
 		$password=$line['password'];
 		$univname=$line['univname'];
+		$voicelink=$line['voicelink'];
 		$resumelink=$line['resumelink'];
 		}
 		 
@@ -53,6 +55,7 @@
 				<div id="header-wrapper">
 					<header id="header" class="container">
 						<div class="row">
+						
 							<div class="12u">
 
 								<!-- Logo -->
@@ -60,11 +63,12 @@
 
 								<!-- Nav -->
 									<nav id="nav">
-										<a href="studentPostLoginHome.html">Homepage</a>
-										<a href="studentInterviews.html">Interview Dashboard</a>
-										<a href="studentCompanyInsights.html">Company Insights</a>
-										<a href="studentZone.html">Interview Zone</a>
-										<a href="studentProfile.html">My Profile</a>
+										<a href="studentPostLoginHome.php">Homepage</a>
+										<a href="studentInterviews.php">Interview Dashboard</a>
+										<a href="studentCompanyInsights.php">Company Insights</a>
+										<a href="studentZone.php">Interview Zone</a>
+										<a href="studentProfile.php">My Profile</a>
+										<a href="logout.php">Logout</a>
 									</nav>
 
 							</div>
@@ -104,7 +108,7 @@
     </div>
     <div class="form-group">
       <label for="pwd">Password:</label>
-      <input type="password" class="form-control" id="pwd" placeholder="Change password" required="true"  title="Minimum Password Length is 8 Characters" value="<?php echo $password; ?>">
+      <input type="password" class="form-control" id="pwd" placeholder="Change password" required="true"  title="Minimum Password Length is 8 Characters" value="">
     </div>
    <div class="form-group">
       <label for="lcn">University Name:</label>
@@ -113,6 +117,10 @@
     <div class="form-group">
       <label for="ppic" title="Use sites like postimage.org" >Resume Link</label>
       <input type="url" class="form-control" id="ppic" placeholder="Enter Url Link(Use AWS cloud for file storage)" required="true" title="Use sites like postimage.org" value="<?php echo $resumelink; ?>">
+    </div>
+    <div class="form-group">
+      <label for="ppic" title="Use sites like postimage.org" >Voice Link</label>
+      <input type="url" class="form-control" id="ppic" placeholder="Enter Url Link(Use AWS cloud for file storage)" required="true" title="Use sites like postimage.org" value="<?php echo $voicelink; ?>">
     </div>    
     <button type="submit" class="btn btn-default" ng-show="myForm.$invalid" ng-disabled="myForm.$invalid" id="sbmt">Update Changes</button>
     <!-- <button type="button" class="btn btn-success" ng-show="myForm.$valid" id="btnsbmt" >Update Changes</button> -->

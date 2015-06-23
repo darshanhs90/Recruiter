@@ -10,14 +10,13 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-		  <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/bootstrap.min.theme.css">
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="css/studentCompanyInsights.css" />
+		
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
-		 <script src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="public/lib/jquery/dist/jquery.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
-
-		<script src="js/studentProfile.js"></script>		
+		<script src="js/studentCompanyInsights.js"></script>
 	</head>
 	<body class="subpage">
 		<div id="page-wrapper">
@@ -33,11 +32,12 @@
 
 								<!-- Nav -->
 									<nav id="nav">
-										<a href="studentPostLoginHome.html">Homepage</a>
-										<a href="studentInterviews.html">Interview Dashboard</a>
-										<a href="studentCompanyInsights.html">Company Insights</a>
-										<a href="studentZone.html">Interview Zone</a>
-										<a href="studentProfile.html">My Profile</a>
+										<a href="studentPostLoginHome.php">Homepage</a>
+										<a href="studentInterviews.php">Interview Dashboard</a>
+										<a href="studentCompanyInsights.php">Company Insights</a>
+										<a href="studentZone.php">Interview Zone</a>
+										<a href="studentProfile.php">My Profile</a>
+										<a href="logout.php">Logout</a>
 									</nav>
 
 							</div>
@@ -50,62 +50,46 @@
 					<div id="content">
 						<div class="container">
 							<div class="row">
-								<div class="12u">
+								<div class="9u 12u(mobile)">
 
 									<!-- Main Content -->
-										<section >
+										<section>
 											<header>
-												<h2>My Profile</h2>
+												<h2>Company Insights</h2>
+												<h3>A way to get to know the company</h3>
 											</header>
-											
-											<div class="row">
-    <div class="jumbotron col-sm-12" >
-    <form role="form" class="col-sm-6" name="myForm" novalidate >
-       <div class="row">
-       <div class="form-group col-sm-6">
-      <label for="name">First Name:</label>
-      <input type="text" class="form-control" id="fname" placeholder="Enter Firstname" required="true"  >
-    </div>
-       <div class="form-group col-sm-6">
-      <label for="name">Last Name:</label>
-      <input type="text" class="form-control" id="lname" placeholder="Enter Lastname" required="true" >
-    </div>
-       </div>
-    <div class="form-group">
-      <label for="email">Email:</label>
-      <input type="email" class="form-control" id="email" placeholder="Enter email" required="true" disabled="true" >
-    </div>
-    <div class="form-group">
-      <label for="pwd">Password:</label>
-      <input type="password" class="form-control" id="pwd" placeholder="Change password" required="true"  title="Minimum Password Length is 8 Characters">
-    </div>
-   <div class="form-group">
-      <label for="lcn">University Name:</label>
-      <input type="text" class="form-control" id="lcn" placeholder="Enter University Name" required="true" >
-    </div>
-    <div class="form-group">
-      <label for="ppic" title="Use sites like postimage.org">Resume Link</label>
-      <input type="url" class="form-control" id="ppic" placeholder="Enter Url Link(Use AWS cloud for file storage)" required="true" title="Use sites like postimage.org" >
-    </div>    
-    <button type="submit" class="btn btn-default" ng-show="myForm.$invalid" ng-disabled="myForm.$invalid" id="sbmt">Update Changes</button>
-    <button type="button" class="btn btn-success" ng-show="myForm.$valid" id="btnsbmt" >Update Changes</button>
-    </form>
-    <div class="col-sm-6" style="margin:auto;" align="center" >
-   <!-- <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=darshanhs"  alt="Mountain View" style="width:200px;height:200px; ">
-    <div>
-    <span>QR Code</span>
-    </div>-->
-    </div>
-  </div>
+											herer
+										</section>
 
+								</div>
+								<div class="3u 12u(mobile)">
 
-
-
-
-
-
-
-
+									<!-- Sidebar -->
+										<section>
+											<header>
+												<h2>Company List</h2>
+											</header>
+											<ul class="link-list" style="overflow-y: scroll; height:250px;">
+												<li><a href="#">Google</a></li>
+												<li><a href="#">Facebook</a></li>
+												<li><a href="#">Microsoft</a></li>
+												<li><a href="#">IBM</a></li>
+												<li><a href="#">Quora</a></li>
+												<li><a href="#">Motorola</a></li>
+												<li><a href="#">Uber</a></li>
+												<li><a href="#">Kandy</a></li>
+											</ul>
+										</section>
+										<section>
+											<header>
+												<h2>Check Company Score</h2>
+											</header>
+											<div id="navBar">
+     <input id="searchBox" type="text" placeholder="Search Our Site" ng-model="searchBox">
+     <div align="center">
+    	 <input id="searchButton" type="button" src="icon_searchMag.png" value="Search" ng-click="srch()">
+     </div>
+</div>
 										</section>
 
 								</div>

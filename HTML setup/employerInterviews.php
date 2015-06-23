@@ -137,6 +137,7 @@ if(!isset($_SESSION['user'])) {
                                         <a href="employerAnalyseProfiles.php">Analyse Profiles</a>
                                         <a href="employerShortlists.php">Shortlisted Students</a>
                                         <a href="employerProfile.php">My Profile</a>
+                                        <a href="logout.php">Logout</a>
                                     </nav>
 
 							</div>

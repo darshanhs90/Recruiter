@@ -9,6 +9,7 @@ echo $_SESSION['user_mail'];
 }*/
 ?>
 
+
 <!DOCTYPE HTML>
 <!--
 	Halcyonic by HTML5 UP
@@ -21,14 +22,39 @@ echo $_SESSION['user_mail'];
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-			  <link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/bootstrap.min.theme.css">
-		<link rel="stylesheet" href="assets/css/main.css" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+		<style>
+.accordion {
+    margin:1em 0
+}
+.accordion h3 {
+    background:#559b6a;
+    color:#fff;
+    cursor:pointer;
+    margin:0 0 1px 0;
+    padding:4px 10px
+}
+.accordion h3.current {
+    background:#4289aa;
+    cursor:default
+}
+.accordion div.pane {
+    padding:5px 10px
+}
+		</style>
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
-		
-		 <script src="js/bootstrap.min.js"></script>
+		 <script src="js/jquery.js"></script>
+
+
+
+
+
+
+ <script src="js/bootstrap.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
-		<script src="js/employerProfile.js"></script>		
+		<script src="js/employerShortlists.js"></script>		
 	</head>
 	<body class="subpage">
 		<div id="page-wrapper">
@@ -49,6 +75,7 @@ echo $_SESSION['user_mail'];
 										<a href="employerAnalyseProfiles.php">Analyse Profiles</a>
 										<a href="employerShortlists.php">Shortlisted Students</a>
 										<a href="employerProfile.php">My Profile</a>
+										<a href="logout.php">Logout</a>
 									</nav>
 
 							</div>
@@ -61,49 +88,42 @@ echo $_SESSION['user_mail'];
 					<div id="content">
 						<div class="container">
 							<div class="row">
-								<div class="12u">
+								<div class="12u 12u(mobile)">
 
-									<!-- Main Content -->
+									<!-- Sidebar -->
 										<section>
 											<header>
-												<h2>My Profile</h2>
+												<h2>Shortlisted Students</h2>
+							<div class="accordion">
+    
+    <ASIDE ng-repeat="prof in profiles track by $index"> <h3>{{x.name}} from {{x.university}}</h3>
+
+    <div class="pane">
+        <ASIDE class="jumbotron">
+        	<ASIDE class="form-group col-sm-12">
+      <a href="video_call.html"> <button type="button" class="btn btn-success" ng-show="myForm.$valid" id="btnsbmt" ng-click="makevid()">Make Video Call</button></a><a href="cobrowsing_user.html"> 
+   		 <button type="button" class="btn btn-success" ng-show="myForm.$valid" id="btnsbmt" ng-click="makeshare()">Start Screen Share session</button></a>
+   		 <button type="button" class="btn btn-success" ng-show="myForm.$valid" id="btnsbmt" ng-click="sendaccept($index)">Send Acceptance</button>
+    </ASIDE>
+
+
+
+        </ASIDE>
+    </div>
+    </ASIDE>
+</div>					
+
+
+
+
+
+
 											</header>
-											
-											<div class="row">
-    <div class="jumbotron col-sm-12" >
-    <form role="form" class="col-sm-6" name="myForm" novalidate >
-       <div class="row">
-       <div class="form-group col-sm-6">
-      <label for="name">First Name:</label>
-      <input type="text" class="form-control" id="fname" placeholder="Enter Firstname" required="true"  >
-    </div>
-       <div class="form-group col-sm-6">
-      <label for="name">Last Name:</label>
-      <input type="text" class="form-control" id="lname" placeholder="Enter Lastname" required="true" >
-    </div>
-       </div>
-    <div class="form-group">
-      <label for="email">Email:</label>
-      <input type="email" class="form-control" id="email" placeholder="Enter email" required="true" disabled="true" >
-    </div>
-    <div class="form-group">
-      <label for="pwd">Password:</label>
-      <input type="password" class="form-control" id="pwd" placeholder="Change password" required="true"  title="Minimum Password Length is 8 Characters">
-    </div>
-   <div class="form-group">
-      <label for="lcn">University Name:</label>
-      <input type="text" class="form-control" id="lcn" placeholder="Enter University Name" required="true" >
-    </div>
-    <div class="form-group">
-      <label for="ppic" title="Use sites like postimage.org">Resume Link</label>
-      <input type="url" class="form-control" id="ppic" placeholder="Enter Url Link(Use AWS cloud for file storage)" required="true" title="Use sites like postimage.org" >
-    </div>    
-    <button type="submit" class="btn btn-default" ng-show="myForm.$invalid" ng-disabled="myForm.$invalid" id="sbmt">Update Changes</button>
-    <button type="button" class="btn btn-success" ng-show="myForm.$valid" id="btnsbmt" >Update Changes</button>
-    </form>
 										</section>
+										
 
 								</div>
+								
 							</div>
 						</div>
 					</div>

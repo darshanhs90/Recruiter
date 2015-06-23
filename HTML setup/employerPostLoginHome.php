@@ -46,6 +46,7 @@ echo $_SESSION['user'];
 										<a href="employerAnalyseProfiles.php">Analyse Profiles</a>
 										<a href="employerShortlists.php">Shortlisted Students</a>
 										<a href="employerProfile.php">My Profile</a>
+										<a href="logout.php">Logout</a>
 									</nav>
 
 							</div>
@@ -57,7 +58,7 @@ echo $_SESSION['user'];
 								<div class="6u 12u(mobile)">
 
 									<!-- Banner Copy -->
-										<p>We do something really useful, important, and unique. Learn all about it here ...</p>
+										<p>Welcome, please check your profile for the QR code</p>
 										<a href="#" class="button-big">Go on, click me!</a>
 
 								</div>

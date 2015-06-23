@@ -1,3 +1,29 @@
+<?php 
+	//error_reporting(0);
+	session_start();
+	require("config.php");
+	$conn = new mysqli($host, $username, $password, $dbname);
+	if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+} 
+	if(empty($_SESSION['user'])) 
+    {
+        header("Location: login.php");
+        die("Redirecting to login.php"); 
+    }
+   $semail = $_SESSION['user'];
+   $query = "select fname,lname,email,companyname from users where email = '$semail'"; 
+   $result = $conn->query($query);
+         
+        while ($line = $result->fetch_assoc()) { 
+   		$fname=$line['fname'];
+   		$lname=$line['lname'];
+		$email=$line['email'];
+		$univname=$line['companyname'];
+		}
+		 
+ ?>
+
 <!DOCTYPE HTML>
 <!--
 	Halcyonic by HTML5 UP
@@ -6,18 +32,18 @@
 -->
 <html>
 	<head>
-		<title>Techruit AppP</title>
+		<title>Techruit App</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-		<link rel="stylesheet" href="css/bootstrap.min.css">
+			  <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/bootstrap.min.theme.css">
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		
- <script src="js/bootstrap.min.js"></script>
+		 <script src="js/bootstrap.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
-		<script src="js/studentJobPostings.js"></script>		
+		<script src="js/employerProfile.js"></script>		
 	</head>
 	<body class="subpage">
 		<div id="page-wrapper">
@@ -29,15 +55,16 @@
 							<div class="12u">
 
 								<!-- Logo -->
-									<h1><a href="#" id="logo">Techruit-Student</a></h1>
+									<h1><a href="#" id="logo">Techruit-Employer</a></h1>
 
 								<!-- Nav -->
 									<nav id="nav">
-										<a href="studentPostLoginHome.html">Homepage</a>
-										<a href="studentInterviews.html">Interview Dashboard</a>
-										<a href="studentCompanyInsights.html">Company Insights</a>
-										<a href="studentZone.html">Interview Zone</a>
-										<a href="studentProfile.html">My Profile</a>
+										<a href="employerPostLoginHome.php">Homepage</a>
+										<a href="employerInterviews.php">Interview Dashboard</a>
+										<a href="employerAnalyseProfiles.php">Analyse Profiles</a>
+										<a href="employerShortlists.php">Shortlisted Students</a>
+										<a href="employerProfile.php">My Profile</a>
+										<a href="logout.php">Logout</a>
 									</nav>
 
 							</div>
@@ -50,30 +77,38 @@
 					<div id="content">
 						<div class="container">
 							<div class="row">
-								<div class="6u 12u(mobile)">
-
-									<!-- Sidebar -->
-										<section>
-											<header>
-												<h2>Video Interview</h2>
-											</header>
-																						
-<a href="answer_video_call.html"> <button type="button" class="btn btn-success" ng-show="myForm.$valid" id="btnsbmt" ng-click="makevid()">Receive Video Call</button></a>
-										</section>
-										
-
-								</div>
-								<div class="6u 12u(mobile) important(mobile)">
+								<div class="12u">
 
 									<!-- Main Content -->
 										<section>
 											<header>
-												<h2>Text Editor</h2>
+												<h2>My Profile</h2>
 											</header>
-<a href="cobrowsing_agent.html"> 
-   		 <button type="button" class="btn btn-success" ng-show="myForm.$valid" id="btnsbmt" ng-click="makeshare()">Start Screen Share session</button></a>
-
-
+											
+											<div class="row">
+    <div class="jumbotron col-sm-12" >
+    <form action="updateEmployerProfile.php" method="post" role="form" class="col-sm-6" name="myForm" novalidate >
+       <div class="row">
+       <div class="form-group col-sm-6">
+      <label for="name">First Name:</label>
+      <input type="text" class="form-control" id="fname" placeholder="Enter Firstname" required="true" value='<?php echo $fname; ?>' >
+    </div>
+       <div class="form-group col-sm-6">
+      <label for="name">Last Name:</label>
+      <input type="text" class="form-control" id="lname" placeholder="Enter Lastname" required="true" value='<?php echo $lname; ?>'>
+    </div>
+       </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" class="form-control" id="email" placeholder="Enter email" required="true" disabled="true" value='<?php echo $email; ?>'>
+    </div>
+    <div class="form-group">
+      <label for="pwd">Password:</label>
+      <input type="password" class="form-control" id="pwd" placeholder="Change password" required="true"  title="Minimum Password Length is 8 Characters">
+    </div>
+    <button type="submit" class="btn btn-success" ng-show="myForm.$invalid" ng-disabled="myForm.$invalid" id="sbmt">Update Changes</button>
+    <!-- <button type="button" class="btn btn-success" ng-show="myForm.$valid" id="btnsbmt" >Update Changes</button> -->
+    </form>
 										</section>
 
 								</div>

@@ -1,3 +1,13 @@
+<?php
+session_start();
+if(!isset($_SESSION['user'])) {
+header("location: login.php");
+exit();
+}
+/*else{
+echo $_SESSION['user'];
+}*/
+?>
 <!DOCTYPE HTML>
 <!--
 	Halcyonic by HTML5 UP
@@ -124,12 +134,13 @@
 
 								<!-- Nav -->
 									<nav id="nav">
-										<a href="studentPostLoginHome.html">Homepage</a>
-										<a href="studentInterviews.html">Interview Dashboard</a>
-										<a href="studentCompanyInsights.html">Company Insights</a>
-										<a href="studentZone.html">Interview Zone</a>
-										<a href="studentProfile.html">My Profile</a>
-									</nav>
+                                        <a href="studentPostLoginHome.php">Homepage</a>
+                                        <a href="studentInterviews.php">Interview Dashboard</a>
+                                        <a href="studentCompanyInsights.php">Company Insights</a>
+                                        <a href="studentZone.php">Interview Zone</a>
+                                        <a href="studentProfile.php">My Profile</a>
+                                        <a href="logout.php">Logout</a>
+                                    </nav>
 
 							</div>
 						</div>

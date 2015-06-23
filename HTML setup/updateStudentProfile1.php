@@ -9,9 +9,12 @@
         // Add row to database 
         $query = ' 
             Update 
-              users  
+              users1  
                 set fname=:fname,
                 set lname=:lname,
+                set companyname=:cname,
+                set resumelink=:resumelink,
+                set stud_rec=:stud_rec, 
                 set password=:password, 
                 set salt=:salt 
              where 
@@ -24,6 +27,9 @@
         $query_params = array( 
             ':fname' => $_POST['fname'], 
             ':lname' => $_POST['lname'], 
+            ':univname' => $_POST['univname'], 
+	        ':resumelink' => $_POST['resumelink'], 
+            ':stud_rec' => $_POST['stud_rec'], 
             ':email' => $_POST['email'], 
             ':password' => $password, 
             ':salt' => $salt 

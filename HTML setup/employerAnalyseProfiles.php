@@ -24,7 +24,7 @@ echo $_SESSION['user_mail'];
 	<link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/bootstrap.min.theme.css">
 	<link rel="stylesheet" href="assets/css/main.css" />
-	/*	<style>
+		<style>
 .accordion {
     margin:1em 0
 }
@@ -42,7 +42,7 @@ echo $_SESSION['user_mail'];
 .accordion div.pane {
     padding:5px 10px
 }
-		</style>*/
+		</style>
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
   <script src="js/jquery.js"></script>
  <script src="js/bootstrap.min.js"></script>
@@ -71,6 +71,7 @@ echo $_SESSION['user_mail'];
 										<a href="employerAnalyseProfiles.php">Analyse Profiles</a>
 										<a href="employerShortlists.php">Shortlisted Students</a>
 										<a href="employerProfile.php">My Profile</a>
+										<a href="logout.php">Logout</a>
 									</nav>
 
 							</div>
