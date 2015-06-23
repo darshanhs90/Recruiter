@@ -1,0 +1,19 @@
+#navBar {
+          background: url(bg_navBar.jpg) repeat-x;
+          height: 44px;
+     }
+     #searchBox {
+          background: #1f1f1f;
+          border: 1px solid #606060;
+          border-radius: 5px;
+          box-shadow: 0 0 4px #000000 inset;
+          color: #fff;
+          font-size: 13px;
+          margin: 6px;
+          padding: 5px 25px 5px 4px;
+          width: 172px;
+     }
+     #searchButton {
+          position: absolute; 
+          margin: 12px 0 0 -26px;
+     }
